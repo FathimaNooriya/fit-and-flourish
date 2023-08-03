@@ -100,8 +100,8 @@ class _sleepScreenState extends State<SleepScreen> {
                           await saveSleep();
                           sleepProgres = false;
                           // ignore: use_build_context_synchronously
-                          Navigator.of(context).pushReplacement(
-                              MaterialPageRoute<HomeScreen>(
+                          Navigator.of(context)
+                              .pushReplacement(MaterialPageRoute<HomeScreen>(
                             builder: (BuildContext context) {
                               return const HomeScreen();
                             },
@@ -318,7 +318,7 @@ class _sleepScreenState extends State<SleepScreen> {
                                   style: AppFonts().headding2black,
                                 ),
                               ),
-                              buttonColor: AppColors().lavender2,
+                              buttonColor: AppColors().lavender,
                               onTapFunction: () async {
                                 alamTime == const TimeOfDay(hour: 0, minute: 0)
                                     ? alamTime = await showTimePicker1(context)
@@ -337,9 +337,10 @@ class _sleepScreenState extends State<SleepScreen> {
                                   style: AppFonts().headding2black,
                                 ),
                               ),
-                              buttonColor: AppColors().lavender2,
+                              buttonColor: AppColors().lavender,
                               onTapFunction: () async {
-                                nextBedTime == const TimeOfDay(hour: 0, minute: 0)
+                                nextBedTime ==
+                                        const TimeOfDay(hour: 0, minute: 0)
                                     ? nextBedTime =
                                         await showTimePicker1(context)
                                     : nextBedTime = await showTimePicker1(

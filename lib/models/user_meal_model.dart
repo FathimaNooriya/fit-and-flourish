@@ -13,11 +13,34 @@ class UserMealModel {
   List<AdminMealModel> listLunchModel;
   @HiveField(3)
   List<AdminMealModel> listDinnerModel;
+  @HiveField(4)
+  double totalMealCalorie;
+  @HiveField(5)
+  double totalProtein;
+  @HiveField(6)
+  double totalFat;
+  @HiveField(7)
+  double totalCarbs;
+  @HiveField(8)
+  double totalFiber;
+  @HiveField(9)
+  double? totalLunchCalorie;
+  @HiveField(10)
+  double? totalBreakFastCalorie;
+  @HiveField(11)
+  double? totalDinnerCalorie;
 
-  UserMealModel({
-    required this.userMealDate,
-    required this.listBreakFastModel,
-    required this.listLunchModel,
-    required this.listDinnerModel,
-  });
+  UserMealModel(
+      {required this.userMealDate,
+      required this.listBreakFastModel,
+      required this.listLunchModel,
+      required this.listDinnerModel,
+      required this.totalMealCalorie,
+      required this.totalProtein,
+      required this.totalFat,
+      required this.totalCarbs,
+      required this.totalFiber,
+      this.totalBreakFastCalorie,
+      this.totalLunchCalorie,
+      this.totalDinnerCalorie});
 }

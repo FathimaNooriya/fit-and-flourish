@@ -18,14 +18,11 @@ late double sleepPerformance;
 int sleepPerformancePercet = 0;
 String sleepQuality = "";
 int alarmId = 1;
-Duration sleepingHours = const Duration(days: 0, hours: 0, minutes: 0, seconds: 0);
+Duration sleepingHours =
+    const Duration(days: 0, hours: 0, minutes: 0, seconds: 0);
 bool alarmSwich = false;
 TimeOfDay sleepTakeninInt = const TimeOfDay(hour: 0, minute: 0);
 bool sleepProgres = false;
-
-sleepTaken() {
-//  sleepHours = alamTime.difference(nextBedTime) as DateTime;
-}
 
 sleepTargetNeeded() {
   //dateTimeFormet('dd-MM-yyyy').format();
@@ -36,12 +33,12 @@ sleepTargetNeeded() {
   if (nextBedTime.period != alamTime.period) {
     alam = DateTime(DateTime.now().year, DateTime.now().month,
         DateTime.now().day + 1, alamTime.hour, alamTime.minute);
-   // print("PM");
+    // print("PM");
   } else {
     alam = DateTime(DateTime.now().year, DateTime.now().month,
         DateTime.now().day, alamTime.hour, alamTime.minute);
 
-  //  print("AM");
+    //  print("AM");
   }
 
   reminingTimeForbed = bedTime.difference(DateTime.now());
@@ -102,7 +99,8 @@ void fireAlarm() {
 //   print("Alam periodically Fiered At${DateTime.now()}");
 // }
 
-saveSleep() {
+saveSleep() async {
+  await sleepTargetNeeded();
   if (sleepList.value.isEmpty) {
     addSleep(SleepModel(
       alamtime: alam,

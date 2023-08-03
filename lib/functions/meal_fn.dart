@@ -113,6 +113,14 @@ saveUserMeal() {
       listBreakFastModel: breakFastList,
       listLunchModel: lunchList,
       listDinnerModel: dinnerList,
+      totalMealCalorie: calorieTaken,
+      totalProtein: totalProtein,
+      totalCarbs: totalCarbs,
+      totalFat: totalFat,
+      totalFiber: totalFiber,
+      totalBreakFastCalorie: totalBreakFastCalorie,
+      totalDinnerCalorie: totallunchCalorie,
+      totalLunchCalorie: totaldinnerCalorie,
     ));
     return;
   }
@@ -125,6 +133,14 @@ saveUserMeal() {
           listBreakFastModel: breakFastList,
           listLunchModel: lunchList,
           listDinnerModel: dinnerList,
+          totalMealCalorie: calorieTaken,
+          totalProtein: totalProtein,
+          totalCarbs: totalCarbs,
+          totalFat: totalFat,
+          totalFiber: totalFiber,
+          totalBreakFastCalorie: totalBreakFastCalorie,
+          totalDinnerCalorie: totallunchCalorie,
+          totalLunchCalorie: totaldinnerCalorie,
         ));
   } else {
     addUserMealList(UserMealModel(
@@ -133,6 +149,14 @@ saveUserMeal() {
       listBreakFastModel: breakFastList,
       listLunchModel: lunchList,
       listDinnerModel: dinnerList,
+      totalMealCalorie: calorieTaken,
+      totalProtein: totalProtein,
+      totalCarbs: totalCarbs,
+      totalFat: totalFat,
+      totalFiber: totalFiber,
+      totalBreakFastCalorie: totalBreakFastCalorie,
+      totalDinnerCalorie: totallunchCalorie,
+      totalLunchCalorie: totaldinnerCalorie,
     ));
   }
 }
