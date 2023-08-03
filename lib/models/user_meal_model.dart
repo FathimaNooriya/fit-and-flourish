@@ -24,11 +24,11 @@ class UserMealModel {
   @HiveField(8)
   double totalFiber;
   @HiveField(9)
-  double? totalLunchCalorie;
+  double totalLunchCalorie;
   @HiveField(10)
-  double? totalBreakFastCalorie;
+  double totalBreakFastCalorie;
   @HiveField(11)
-  double? totalDinnerCalorie;
+  double totalDinnerCalorie;
 
   UserMealModel(
       {required this.userMealDate,
@@ -40,7 +40,7 @@ class UserMealModel {
       required this.totalFat,
       required this.totalCarbs,
       required this.totalFiber,
-      this.totalBreakFastCalorie,
-      this.totalLunchCalorie,
-      this.totalDinnerCalorie});
+      required this.totalBreakFastCalorie,
+      required this.totalLunchCalorie,
+      required this.totalDinnerCalorie});
 }

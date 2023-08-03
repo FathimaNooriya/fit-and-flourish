@@ -26,9 +26,9 @@ class UserMealModelAdapter extends TypeAdapter<UserMealModel> {
       totalFat: fields[6] as double,
       totalCarbs: fields[7] as double,
       totalFiber: fields[8] as double,
-      totalBreakFastCalorie: fields[10] as double?,
-      totalLunchCalorie: fields[9] as double?,
-      totalDinnerCalorie: fields[11] as double?,
+      totalBreakFastCalorie: fields[10] as double,
+      totalLunchCalorie: fields[9] as double,
+      totalDinnerCalorie: fields[11] as double,
     );
   }
 

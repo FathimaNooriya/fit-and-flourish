@@ -6,6 +6,7 @@ import 'package:healthy/screens/admin_login.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../db_functions/admin_meal_db_fn.dart';
 import '../functions/admin_functions.dart';
+import '../main.dart';
 import '../models/admin_meal_model.dart';
 import '../theme/colors.dart';
 import '../theme/fonds.dart';
@@ -24,7 +25,7 @@ class AdminHomeScreen extends StatefulWidget {
 class _adminHomeScreenState extends State<AdminHomeScreen> {
   @override
   void initState() {
-   // openBox();
+    // openBox();
     super.initState();
   }
 
@@ -61,7 +62,7 @@ class _adminHomeScreenState extends State<AdminHomeScreen> {
                                 onPressed: () async {
                                   final sharedPref =
                                       await SharedPreferences.getInstance();
-                                  await sharedPref.clear();
+                                  await sharedPref.setBool(adminSaveKey, false);
                                   Navigator.of(context).pushAndRemoveUntil(
                                       MaterialPageRoute(
                                           builder: ((context2) =>

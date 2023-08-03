@@ -47,13 +47,6 @@ sleepTargetNeeded() {
       hour: sleepingHours.inHours.round(),
       minute: sleepingHours.inMinutes % 60);
 
-  if (alam == DateTime.now()) {
-    Noti.showBigTextNotification(
-        title: "New message title",
-        body: "Your long body",
-        fln: flutterLocalNotificationsPlugin);
-  }
-
   if (sleepingHours.inHours >= targetSleepHours.hour &&
       sleepingHours.inHours <= targetSleepHours2.hour) {
     sleepPerformancePercet = 100;
@@ -76,28 +69,43 @@ sleepTargetNeeded() {
   // print(nextBedTime1.day);
 }
 
+// alarmOn() {
+//   if (alarmSwich == true) {
+//     if (alam == DateTime.now()) {
+//       Noti.showBigTextNotification(
+//           title: "New message title",
+//           body: "Your long body",
+//           fln: flutterLocalNotificationsPlugin);
+//     }
+//   }
+// }
+
 setAlarm() async {
   await sleepTargetNeeded();
+//  await alarmOn();
   AndroidAlarmManager.oneShotAt(alam, alarmId, fireAlarm);
 }
 
 void fireAlarm() {
-  Noti.showBigTextNotification(
-      title: "Time to wake up",
-      body: "Good morning....",
-      fln: flutterLocalNotificationsPlugin);
+  if (alarmSwich == true) {
+    Noti.showBigTextNotification(
+        title: "Time to wake up",
+        body: "Good morning....",
+        fln: flutterLocalNotificationsPlugin);
 
-  // AndroidAlarmManager.periodic(Duration(minutes: 01), 1, periodicAlarm);
+    AndroidAlarmManager.periodic(Duration(minutes: 5), 1, periodicAlarm);
+  }
 }
 
-// void periodicAlarm() {
-
-//   Noti.showBigTextNotification(
-//       title: "Time to drink a glass of water",
-//       body: "Add it to your logs before it's too late",
-//       fln: flutterLocalNotificationsPlugin);
-//   print("Alam periodically Fiered At${DateTime.now()}");
-// }
+void periodicAlarm() {
+  if (alarmSwich == true) {
+    Noti.showBigTextNotification(
+        title: "Time to wake up",
+        body: "Good morning....",
+        fln: flutterLocalNotificationsPlugin);
+    print("Alam periodically Fiered At${DateTime.now()}");
+  }
+}
 
 saveSleep() async {
   await sleepTargetNeeded();
