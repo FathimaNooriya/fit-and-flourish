@@ -198,7 +198,7 @@ class _homeScreenState extends State<HomeScreen> {
                       value: "${calorieTaken.round()} Cal",
                       onTap: () async {
                         await targertFoodCalorie();
-                        print("mmmmmm");
+                        // ignore: use_build_context_synchronously
                         await Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => MealScreen(),
                         ));

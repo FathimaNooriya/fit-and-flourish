@@ -105,7 +105,7 @@ void periodicAlarm() {
         title: "Time to wake up",
         body: "Good morning....",
         fln: flutterLocalNotificationsPlugin);
-    print("Alam periodically Fiered At${DateTime.now()}");
+   // print("Alam periodically Fiered At${DateTime.now()}");
   }
 }
 
