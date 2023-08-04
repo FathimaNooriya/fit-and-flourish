@@ -40,7 +40,7 @@ class _startingPageState extends State<StartingPage> {
                 height: 400,
                 color: AppColors().white,
                 child: Image.asset(
-                  "assets/images/gifimage.gif",
+                  "assets/images/logo.gif",
                 ),
               ),
             ],

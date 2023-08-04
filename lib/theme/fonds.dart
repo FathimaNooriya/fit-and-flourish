@@ -7,6 +7,11 @@ class AppFonts {
     fontWeight: FontWeight.bold,
     color: AppColors().white,
   );
+  final headding3White = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+    color: AppColors().white,
+  );
   final headding2White = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.bold,

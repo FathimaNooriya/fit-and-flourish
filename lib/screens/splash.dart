@@ -38,8 +38,9 @@ class SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset("assets/images/logo.png"),
-            Text("Be Healthy", style: AppFonts().headdingWhite)
+            SizedBox(height: 300, child: Image.asset("assets/images/logo.gif")),
+            // Text("Be Healthy", style: AppFonts().headdingWhite)
+            Text("Fit & Flourish", style: AppFonts().headding3White)
           ],
         ),
       ),
@@ -76,7 +77,6 @@ class SplashScreenState extends State<SplashScreen> {
         Navigator.of(context).pushReplacement(
             MaterialPageRoute(builder: ((context) => const RegisrationPage())));
       } else {
-      
         Navigator.of(context).pushReplacement(
             MaterialPageRoute(builder: ((context) => const AdminLogin())));
       }
