@@ -22,6 +22,28 @@ class WeightScreen extends StatefulWidget {
 // ignore: camel_case_types
 class _weightScreenState extends State<WeightScreen> {
   @override
+  void initState() {
+    if (yourGoal == "Weight Gain") {
+      goalCalegory = "Gain";
+    } else if (yourGoal == "Weight Loss") {
+      goalCalegory = "Loss";
+    } else if (yourGoal == "Maintain Weight") {
+      goalCalegory = "Maintain Weight";
+    }
+    if (weightList.value.isNotEmpty) {
+      todaysWeight = weightList.value.last.weightAmount;
+      if (weightList.value.last.weightImage!.isNotEmpty) {
+        weightImage = File(weightList.value.last.weightImage!);
+      }
+      //DateTime.now()=weightList.value.last.weightDate;
+      targetWeight = weightList.value.last.weightTarget;
+      weeklyRate = weightList.value.last.weightTargetTime;
+      reminingWeeks = weightList.value.last.reminingDaysNeeded;
+    }
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     getWeightList();
     return SafeArea(

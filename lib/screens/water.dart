@@ -27,6 +27,8 @@ class _waterScreenState extends State<WaterScreen> {
     super.initState();
     getWaterList();
     if (waterList.value.isNotEmpty) {
+      radioButtonValue = waterList.value.last.waterReminder;
+      waterNeededPerGlass = waterList.value.last.waterTarget;
       if (waterList.value.last.waterDate.day == DateTime.now().day) {
         drinkedWater = waterList.value.last.waterIntake;
       }
@@ -256,8 +258,8 @@ class _waterScreenState extends State<WaterScreen> {
                           // Navigator.of(context).push(MaterialPageRoute(
                           //     builder: (context) => homeScreen()));
                           // ignore: use_build_context_synchronously
-                          Navigator.of(context).pushReplacement(
-                              MaterialPageRoute<HomeScreen>(
+                          Navigator.of(context)
+                              .pushReplacement(MaterialPageRoute<HomeScreen>(
                             builder: (BuildContext context) {
                               return const HomeScreen();
                             },

@@ -8,11 +8,11 @@ class UserMealModel {
   @HiveField(0)
   String userMealDate;
   @HiveField(1)
-  List<AdminMealModel> listBreakFastModel;
+  List<AdminMealModel>? listBreakFastModel;
   @HiveField(2)
-  List<AdminMealModel> listLunchModel;
+  List<AdminMealModel>? listLunchModel;
   @HiveField(3)
-  List<AdminMealModel> listDinnerModel;
+  List<AdminMealModel>? listDinnerModel;
   @HiveField(4)
   double totalMealCalorie;
   @HiveField(5)

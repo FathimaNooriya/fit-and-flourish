@@ -13,7 +13,6 @@ late double bmr;
 late double tdee;
 bool regi2progress = false;
 double calorieTaken = 0;
-
 String activity = "Sedentary";
 String selectedChoiceChip = 'Hi User..';
 

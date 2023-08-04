@@ -7,11 +7,13 @@ ValueNotifier<List<UserMealModel>> userMealList = ValueNotifier([]);
 Future<void> addUserMealList(UserMealModel value) async {
   final userMealListDb = await Hive.openBox<UserMealModel>('user_meal_db');
   userMealId = await userMealListDb.add(value);
-  getUserMealList();
+  print(userMealId);
+  await getUserMealList();
 }
 
 Future<void> getUserMealList() async {
   final userMealListDb = await Hive.openBox<UserMealModel>('user_meal_db');
+  //userMealListDb.clear();
   userMealList.value.clear();
   userMealList.value.addAll(userMealListDb.values);
 }

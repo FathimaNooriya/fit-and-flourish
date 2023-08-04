@@ -34,7 +34,6 @@ class HomeScreen extends StatefulWidget {
 class _homeScreenState extends State<HomeScreen> {
   @override
   void initState() {
-
     super.initState();
   }
 
@@ -198,7 +197,8 @@ class _homeScreenState extends State<HomeScreen> {
                       text: "Add meal",
                       value: "${calorieTaken.round()} Cal",
                       onTap: () async {
-                        targertFoodCalorie();
+                        await targertFoodCalorie();
+                        print("mmmmmm");
                         await Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => MealScreen(),
                         ));

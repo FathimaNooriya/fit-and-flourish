@@ -18,9 +18,9 @@ class UserMealModelAdapter extends TypeAdapter<UserMealModel> {
     };
     return UserMealModel(
       userMealDate: fields[0] as String,
-      listBreakFastModel: (fields[1] as List).cast<AdminMealModel>(),
-      listLunchModel: (fields[2] as List).cast<AdminMealModel>(),
-      listDinnerModel: (fields[3] as List).cast<AdminMealModel>(),
+      listBreakFastModel: (fields[1] as List?)?.cast<AdminMealModel>(),
+      listLunchModel: (fields[2] as List?)?.cast<AdminMealModel>(),
+      listDinnerModel: (fields[3] as List?)?.cast<AdminMealModel>(),
       totalMealCalorie: fields[4] as double,
       totalProtein: fields[5] as double,
       totalFat: fields[6] as double,

@@ -10,20 +10,20 @@ final List<AdminMealModel> meal = [];
 List<AdminMealModel> breakFastList = [];
 List<AdminMealModel> lunchList = [];
 List<AdminMealModel> dinnerList = [];
-double totalBreakFastCalorie = 0;
-double totallunchCalorie = 0;
-double totaldinnerCalorie = 0;
-late double targetBreakFastCalorie;
-late double targetLunchCalorie;
-double targetDinnerCalorie = 0;
-double totalProtein = 0;
-double totalFat = 0;
-double totalCarbs = 0;
-double totalFiber = 0;
-double targetProtein = 0;
-double targetFat = 0;
-double targetCarbs = 0;
-double targetFiber = 0;
+double totalBreakFastCalorie = 0.0;
+double totallunchCalorie = 0.0;
+double totaldinnerCalorie = 0.0;
+double targetBreakFastCalorie = 0.0;
+double targetLunchCalorie = 0.0;
+double targetDinnerCalorie = 0.0;
+double totalProtein = 0.0;
+double totalFat = 0.0;
+double totalCarbs = 0.0;
+double totalFiber = 0.0;
+double targetProtein = 0.0;
+double targetFat = 0.0;
+double targetCarbs = 0.0;
+double targetFiber = 0.0;
 int nextday = 1;
 bool mealProgress = false;
 
@@ -51,10 +51,34 @@ dinnerCalorie(AdminMealModel value) {
   totaldinnerCalorie = totaldinnerCalorie + value.mealCalorie;
 }
 
-targertFoodCalorie() {
+targertFoodCalorie() async {
+  await targetNutrients();
   targetBreakFastCalorie = ((35 / 100) * dailyCalorieIntake);
   targetLunchCalorie = ((40 / 100) * dailyCalorieIntake);
   targetDinnerCalorie == ((25 / 100) * dailyCalorieIntake);
+  print(".....................");
+  if (userMealList.value.isNotEmpty) {
+    print(".....................");
+    if (userMealList.value.last.userMealDate ==
+        DateFormat('dd-MM-yyyy').format(DateTime.now())) {
+      if (userMealList.value.last.listBreakFastModel!.isNotEmpty) {
+        breakFastList = userMealList.value.last.listBreakFastModel!;
+      } else if (userMealList.value.last.listLunchModel!.isNotEmpty) {
+        lunchList = userMealList.value.last.listLunchModel!;
+      } else if (userMealList.value.last.listDinnerModel!.isNotEmpty) {}
+      dinnerList = userMealList.value.last.listDinnerModel!;
+      print(".....................");
+      calorieTaken = userMealList.value.last.totalMealCalorie;
+      totalProtein = userMealList.value.last.totalProtein;
+      totalCarbs = userMealList.value.last.totalCarbs;
+      totalFat = userMealList.value.last.totalFat;
+      totalFiber = userMealList.value.last.totalFiber;
+      totalBreakFastCalorie = userMealList.value.last.totalBreakFastCalorie;
+      totallunchCalorie = userMealList.value.last.totalLunchCalorie;
+      totaldinnerCalorie = userMealList.value.last.totalDinnerCalorie;
+      print(".......zzzzzzzzzzzzzzzz..............");
+    }
+  }
 }
 
 totalNutritioncalorie(AdminMealModel value) {
@@ -139,8 +163,8 @@ saveUserMeal() {
           totalFat: totalFat,
           totalFiber: totalFiber,
           totalBreakFastCalorie: totalBreakFastCalorie,
-          totalDinnerCalorie: totallunchCalorie,
-          totalLunchCalorie: totaldinnerCalorie,
+          totalDinnerCalorie: totaldinnerCalorie,
+          totalLunchCalorie: totallunchCalorie,
         ));
   } else {
     addUserMealList(UserMealModel(
@@ -155,16 +179,16 @@ saveUserMeal() {
       totalFat: totalFat,
       totalFiber: totalFiber,
       totalBreakFastCalorie: totalBreakFastCalorie,
-      totalDinnerCalorie: totallunchCalorie,
-      totalLunchCalorie: totaldinnerCalorie,
+      totalDinnerCalorie: totaldinnerCalorie,
+      totalLunchCalorie: totallunchCalorie,
     ));
   }
 }
 
-UserMealModel? mealOfNextDay() {
-  if (userMealList.value.last.userMealDate ==
-      DateFormat('dd-MM-yyyy').format(DateTime.now())) {
-    return userMealList.value[userMealList.value.length - 1];
-  }
-  return null;
-}
+// UserMealModel? mealOfNextDay() {
+//   if (userMealList.value.last.userMealDate ==
+//       DateFormat('dd-MM-yyyy').format(DateTime.now())) {
+//     return userMealList.value[userMealList.value.length - 1];
+//   }
+//   return null;
+// }

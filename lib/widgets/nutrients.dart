@@ -37,10 +37,15 @@ class NutrientsWidget extends StatelessWidget {
                 valueColor: AppColors().pink,
                 height: 5),
           ),
-          Text(
-            "${nutrientPercent.round()}",
-            style: AppFonts().headding2grey,
-          ),
+          nutrientPercent.isInfinite
+              ? Text(
+                  "0",
+                  style: AppFonts().headding2grey,
+                )
+              : Text(
+                  "${nutrientPercent.round()}",
+                  style: AppFonts().headding2grey,
+                ),
         ],
       ),
     );

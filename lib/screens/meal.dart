@@ -25,24 +25,9 @@ class MealScreen extends StatefulWidget {
 class _mealScreenState extends State<MealScreen> {
   @override
   void initState() {
-    if (userMealList.value.isNotEmpty) {
-      if (userMealList.value.last.userMealDate ==
-          DateFormat('dd-MM-yyyy').format(DateTime.now())) {
-        breakFastList = userMealList.value.last.listBreakFastModel;
-        lunchList = userMealList.value.last.listLunchModel;
-        dinnerList = userMealList.value.last.listDinnerModel;
-        calorieTaken = userMealList.value.last.totalMealCalorie;
-        totalProtein = userMealList.value.last.totalProtein;
-        totalCarbs = userMealList.value.last.totalCarbs;
-        totalFat = userMealList.value.last.totalFat;
-        totalFiber = userMealList.value.last.totalFiber;
-        totalBreakFastCalorie = userMealList.value.last.totalBreakFastCalorie;
-        totallunchCalorie = userMealList.value.last.totalLunchCalorie;
-        totaldinnerCalorie = userMealList.value.last.totalDinnerCalorie;
-      }
-    }
-
     super.initState();
+
+   
   }
 
   @override
@@ -79,11 +64,11 @@ class _mealScreenState extends State<MealScreen> {
               children: [
                 IconButton(
                     onPressed: () {
-                      final data = mealOfNextDay();
+                      // final data = mealOfNextDay();
                       setState(() {
-                        breakFastList = data!.listBreakFastModel;
-                        lunchList = data.listLunchModel;
-                        dinnerList = data.listDinnerModel;
+                        // breakFastList = data!.listBreakFastModel;
+                        // lunchList = data.listLunchModel;
+                        // dinnerList = data.listDinnerModel;
                       });
                     },
                     icon: const Icon(Icons.arrow_back_ios_new)),

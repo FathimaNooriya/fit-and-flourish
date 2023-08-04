@@ -89,12 +89,12 @@ Future<void> main() async {
   }
 
   // openBox();
-  adminGetMealList();
-  getRegister();
-  getWaterList();
-  getWeightList();
-  getSleepList();
-  getUserMealList();
+  await adminGetMealList();
+  await getRegister();
+  await getWaterList();
+  await getWeightList();
+  await getSleepList();
+  await getUserMealList();
   await AndroidAlarmManager.initialize();
   runApp(const MyApp());
 }
