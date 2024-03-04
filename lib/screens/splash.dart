@@ -39,7 +39,7 @@ class SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(height: 300, child: Image.asset("assets/images/logo.gif")),
-            // Text("Be Healthy", style: AppFonts().headdingWhite)
+            //   Text("Be Healthy", style: AppFonts().headdingWhite),
             Text("Fit & Flourish", style: AppFonts().headding3White)
           ],
         ),
@@ -70,6 +70,7 @@ class SplashScreenState extends State<SplashScreen> {
       await totalEneryShouldBurn();
       await weterNeedToDrink();
       await waterReminder();
+
       Navigator.of(context).pushReplacement(
           MaterialPageRoute(builder: ((context) => const HomeScreen())));
     } else {

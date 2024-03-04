@@ -225,4 +225,6 @@ adminClearData() {
   adminUsername.clear();
 }
 
-adminLogoutFn() {}
+adminLogoutFn() {
+  
+}

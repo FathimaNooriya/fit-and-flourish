@@ -68,7 +68,7 @@ class _adminHomeScreenState extends State<AdminHomeScreen> {
                                           builder: ((context2) =>
                                               const AdminLogin())),
                                       (route) => false);
-                                  adminLogoutFn();
+                                  //   adminLogoutFn();
                                 },
                                 child: const Text("yes")),
                             ElevatedButton(

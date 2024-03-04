@@ -95,7 +95,7 @@ Future<void> main() async {
   await getWeightList();
   await getSleepList();
   await getUserMealList();
-  await AndroidAlarmManager.initialize();
+  // await AndroidAlarmManager.initialize();
   runApp(const MyApp());
 }
 

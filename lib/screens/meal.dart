@@ -211,7 +211,7 @@ class _mealScreenState extends State<MealScreen> {
               height: 20,
             ),
             SizedBox(
-              height: 200,
+              height: 220,
               child: ButtonWidget(
                   myText: Padding(
                     padding: const EdgeInsets.all(8.0),
