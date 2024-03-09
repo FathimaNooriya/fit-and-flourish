@@ -87,6 +87,7 @@ Future<void> main() async {
   if (!Hive.isAdapterRegistered(SwimmingModelAdapter().typeId)) {
     Hive.registerAdapter(SwimmingModelAdapter());
   }
+  //....checking purpose....................
 
   // openBox();
   await adminGetMealList();
