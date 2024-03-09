@@ -56,9 +56,7 @@ targertFoodCalorie() async {
   targetBreakFastCalorie = ((35 / 100) * dailyCalorieIntake);
   targetLunchCalorie = ((40 / 100) * dailyCalorieIntake);
   targetDinnerCalorie == ((25 / 100) * dailyCalorieIntake);
-  print(".....................");
   if (userMealList.value.isNotEmpty) {
-    print(".....................");
     if (userMealList.value.last.userMealDate ==
         DateFormat('dd-MM-yyyy').format(DateTime.now())) {
       if (userMealList.value.last.listBreakFastModel!.isNotEmpty) {
@@ -67,7 +65,6 @@ targertFoodCalorie() async {
         lunchList = userMealList.value.last.listLunchModel!;
       } else if (userMealList.value.last.listDinnerModel!.isNotEmpty) {}
       dinnerList = userMealList.value.last.listDinnerModel!;
-      print(".....................");
       calorieTaken = userMealList.value.last.totalMealCalorie;
       totalProtein = userMealList.value.last.totalProtein;
       totalCarbs = userMealList.value.last.totalCarbs;
@@ -76,7 +73,6 @@ targertFoodCalorie() async {
       totalBreakFastCalorie = userMealList.value.last.totalBreakFastCalorie;
       totallunchCalorie = userMealList.value.last.totalLunchCalorie;
       totaldinnerCalorie = userMealList.value.last.totalDinnerCalorie;
-      print(".......zzzzzzzzzzzzzzzz..............");
     }
   }
 }

@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:healthy/screens/addlunch.dart';
 import 'package:healthy/screens/home.dart';
 import 'package:healthy/theme/fonds.dart';
-import 'package:intl/intl.dart';
-import '../db_functions/user_meal_db_fn.dart';
-import '../functions/functions.dart';
 import '../functions/meal_fn.dart';
 import '../theme/colors.dart';
 import '../widgets/appbar.dart';
@@ -26,8 +23,6 @@ class _mealScreenState extends State<MealScreen> {
   @override
   void initState() {
     super.initState();
-
-   
   }
 
   @override
