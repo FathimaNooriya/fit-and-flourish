@@ -52,11 +52,20 @@ class AddLunchScreen extends StatelessWidget {
                               SizedBox(
                                 width: 50,
                                 height: 100,
-                                child: Image(
-                                  image: FileImage(File(
-                                    mealData.mealImage,
-                                  )),
-                                ),
+                                child: mealData.mealImage.contains("assets")
+                                    ? Image(
+                                        image: AssetImage(mealData.mealImage),
+                                        // FileImage(File(
+                                        //     mealData.mealImage,
+                                        //   )),
+                                      )
+                                    : Image(
+                                        image:
+                                            //AssetImage(mealData.mealImage),
+                                            FileImage(File(
+                                          mealData.mealImage,
+                                        )),
+                                      ),
                               ),
 
                               // "assets/images/tea.png",

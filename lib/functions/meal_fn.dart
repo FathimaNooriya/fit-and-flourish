@@ -26,11 +26,44 @@ double targetCarbs = 0.0;
 double targetFiber = 0.0;
 int nextday = 1;
 bool mealProgress = false;
+List<AdminMealModel> constMealList = [
+  AdminMealModel(
+      mealName: "Chapati",
+      mealCategory: "Dinner",
+      mealCalorie: 85,
+      mealImage: "assets/images/chapati.jpg",
+      carbs: 17.4,
+      fat: 0.4,
+      protein: 3,
+      fiber: 17.4,
+      mealAmount: "1"),
+  AdminMealModel(
+      mealName: "Milk",
+      mealCategory: "Brakefast",
+      mealCalorie: 168,
+      mealImage: 'assets/images/milk.jpg',
+      carbs: 11,
+      fat: 10.3,
+      protein: 8,
+      fiber: 0,
+      mealAmount: "1 glass"),
+  AdminMealModel(
+      mealName: "Cheaken Biriyani",
+      mealCategory: "Lunch",
+      mealCalorie: 167,
+      mealImage: 'assets/images/chicken_biriyani.jpg',
+      carbs: 17.7,
+      fat: 6.8,
+      protein: 8,
+      fiber: .6,
+      mealAmount: "1 bowl")
+];
 
 addMealTolist(String category) async {
   await adminGetMealList();
+  List<AdminMealModel> myMealList = constMealList + adminMealList.value;
 
-  for (AdminMealModel element in adminMealList.value) {
+  for (AdminMealModel element in myMealList) {
     if (element.mealCategory == category) {
       meal.add(element);
     }
