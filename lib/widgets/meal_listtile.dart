@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_typing_uninitialized_variables
 
-import 'dart:io';
+//import 'dart:io';
 import 'package:flutter/material.dart';
 import '../db_functions/user_meal_db_fn.dart';
 import '../functions/meal_fn.dart';
@@ -31,11 +31,14 @@ class MealListtile extends StatelessWidget {
         leading: SizedBox(
           height: 60,
           width: 60,
-          child: Image(
-            image: FileImage(File(
-              mealImage,
-            )),
+          child: Image.asset(
+            mealImage,
           ),
+          // Image(
+          //   image: FileImage(File(
+          //     mealImage,
+          //   )),
+          // ),
         ),
         //  Image.asset(
         //   mealImage,

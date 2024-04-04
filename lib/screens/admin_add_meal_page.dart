@@ -111,8 +111,7 @@ class _adminAddMealPageState extends State<AdminAddMealPage> {
                     visible: addMealImage,
                     child: const Text(
                       'Please Add Photo',
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 177, 22, 11)),
+                      style: TextStyle(color: Color.fromARGB(255, 177, 22, 11)),
                     ),
                   ),
                 ),

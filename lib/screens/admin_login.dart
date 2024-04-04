@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:healthy/screens/signup_page.dart';
 import 'package:healthy/theme/fonds.dart';
@@ -23,7 +22,7 @@ class AdminLogin extends StatelessWidget {
             child: ListView(children: [
               //    ChoiceChip(label: , selected: selected),
               const AppbarWigget(
-                appTitle: "Admin...",
+                appTitle: "Login...",
                 iconThere: false,
               ),
               const SizedBox(
@@ -107,7 +106,8 @@ class AdminLogin extends StatelessWidget {
               TextButton(
                   onPressed: () {
                     Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => const SignUpPage()),
+                      MaterialPageRoute(
+                          builder: (context) => const SignUpPage()),
                     );
                   },
                   child: const Text("sign Up"))
